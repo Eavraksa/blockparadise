@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h1 id="home">Delicious Food</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><input type="button" value="contact" onclick="test()"></li>
+                <li><input type="button" value="about" onclick="about()"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <h2>Welcome to Delicious Food</h2>
+        <p>Enjoy the best food in town!</p>
+    </section>
+
+    <!-- Food Menu -->
+    <section class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <div class="food-container">
+            <div class="food-item">
+                <img src="download (2).jpg" alt="Food 1" id="img"  onmouseover="pizza()" onmouseout="buyPayP()">
+                <h3>Pizza</h3>
+                <p>price : 10.99$</p>
+                <p>Delicious cheesy pizza with fresh ingredients.</p>
+                <input type="button" value="buy" onclick="buyP() ">
+            </div>
+            <div class="food-item">
+                <img src="berger.jpg" alt="Food 2" onmouseover="pizza()" onmouseout="buyPayP()" >
+                <h3>Burger</h3>
+                <p>price : 7.99$</p>
+                <p>Juicy beef burger with crispy fries.</p>
+                <input type="button" value="buy" onclick="buyB()">
+            </div>
+            <div class="food-item">
+                <img src="pasta.jpg" alt="Food 3"  >
+                <h3>Pasta</h3>
+                <p>price : 8.00$</p>
+                <p>Freshly made pasta with rich tomakkto sauce.</p>
+                <input type="button" value="buy" onclick="buyS()">
+            </div>
+            <div class="food-item">
+                <img src="" alt="">
+                <img src="rice.jpg" alt="food4">
+                <p> Rice chicken</p>
+                <p>price</p>
+            </div>
+        </div>
+    </section>
+    <section class="h"> about
+   <div>burger</div>
+        <div class="about">
+   
+Classic Cheeseburger Beef patty, cheddar, lettuce, tomato, onion
+
+Bacon BBQ Burger Smoked bacon, BBQ sauce, crispy onions
+
+Chicken Burger Grilled or fried chicken, mayo, lettuce, 
+tomato
+
+Veggie Burger Plant-based patty, avocado, lettuce, and vegan mayo
+    </div>
+    <div>Pasta</div>
+ <div class="about">
+  Spaghetti Bolognese  Rich beef and tomato sauce, parmesan on top
+
+Penne Alfredo  Creamy garlic parmesan sauce with grilled chicken
+
+Vegetarian Pesto Pasta  Basil pesto, cherry tomatoes, and zucchini
+
+Lasagna  Layers of pasta, beef, ricotta, and mozzarella </div>
+  <div>Pizza</div>
+  <div class="about">
+  Margherita  Classic tomato sauce, fresh mozzarella, basil
+
+Pepperoni Feast  Loaded with spicy pepperoni and extra cheese
+
+Veggie Delight  Bell peppers, mushrooms, onions, olives, and spinach
+
+BBQ Chicken  Grilled chicken, BBQ sauce, red onions, and cilantro</div></section>
+<script src="new.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Delicious Food. All rights reserved.</p>
+    </footer>
+</body>
+    <script>
+        function test(){
+           alert("0966137802")
+        }
+        function about(){
+            alert ("injoy with your food")
+        }
+        function buyP(){
+            alert("pay 10.99$")
+        }
+        function buyPayP(){
+            alert("pay 10.99$")
+            document.getElementById("img").setAttribute("src","10.99$.jpg")
+        }
+        function buyB(){
+            alert("pay 7.99$")
+        }
+        function buyS(){
+            alert("pay 8,00$")
+        }
+        
+
+        function buyP(){
+            alert("pay 10.99$")
+        }
+        function pizza(){
+            document.getElementById("img").setAttribute("src","download (2).jpg")
+        }
+        function buyPayP(){
+            alert("pay 10.99$")
+            document.getElementById("img").setAttribute("src","10.99$.jpg")
+        }
+    </script>
+
+
+</html>

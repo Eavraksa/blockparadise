@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>javascipt</title>
+      <style>
+       #nice{
+         font-size: 30px;
+         width: 200px;
+         height: 100px;
+         background-color: yellowgreen;
+         text-align: center;
+       }
+       
+      </style>
+</head>
+<body>
+      <div id="nice" onclick="chColor()">Welcome to my web</div>
+      <input type="button" value="Click me" onclick="test()">
+      <input type="button" value="change cont" onclick="chText()">
+      <input type="button" value="change color" onclick="chColor()">
+      <input type="button" value="hide" onclick="hideEL()">
+      <input type="button" value="show" onclick="showEl()">
+
+
+      <div><img src="images (3).jpg" alt="" width="200 " id="img" onmouseover="newImg()" onmouseout="oldImg()"></div>
+      <div><img src="img6.jpg" alt="" width="200" id="img" onmouseover="shoes1()" onmouseout="shoes2()"></div>
+
+</body>
+     <script>
+      function shoes1(){
+            document.getElementById("img").setAttribute("src","img6.jpg")
+      }
+      function shoes2(){
+            document.getElementById("img").setAttribute("src","img.5.jpg")
+          }
+
+      function showEl(){
+            document.getElementById("nice").style.display="block";
+      }
+      function hideEL(){
+            document.getElementById("nice").style.display="none";
+      }
+      function chColor(){
+            document.getElementById("nice").style.color="blue";"red";"yellow";
+      }
+      function chText(){
+            document.getElementById("nice").innerHTML="Puk ah jm";
+      }
+          function test(){
+            alert("Wellcome")
+          }
+            function oldImg(){
+            document.getElementById("img").setAttribute("src","images (3).jpg")
+     }
+      function newImg(){
+            document.getElementById("img").setAttribute("src","img4.jpg")
+          }
+     </script>
+</html>

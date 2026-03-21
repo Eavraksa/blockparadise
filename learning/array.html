@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <style>
+        #demo{
+            text-align: center;
+            padding: 20px;
+            border-radius: 25px;
+            background-color: #fff3ff;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+     <input type="button" value="Click me" onclick="test()">
+     <input type="button" value="hehe" onclick="testfor()">
+     <div id="demo">
+        Hello
+     </div>
+</body>
+        <script>
+            var it= ["Yutube" , "facebook" , "Tik tok" , "Google"];
+            testfor();
+            function testfor(){
+                  var num = it.length;
+                  var txt = '';
+                    for(i=0 ; i<num ; i++){
+                    txt += '<li><a>' + it[i]+ '</a></li>';
+                }
+                document.getElementById('demo').innerHTML= '<ul>'+ txt +'</ul>';
+            }
+            function test(){
+                var color = ["Red" , "blue " , "green" , "yellow"];
+                var phone = {'model': 'iphone' , 'price': '100$'};
+              document.getElementById('demo').innerHTML= color[1];
+            }
+        </script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My School Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background-color: #f4f7f8;
+      color: #333;
+    }
+    header {
+      background-color: #00539C;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #03396c;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #011f4b;
+    }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #00539C;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #03396c;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Contact form styles */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 0 5px;
+    }
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #00539C;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #003f7d;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sunshine High School</h1>
+    <p>Empowering Students for a Brighter Future</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#classes">Classes</a>
+    <a href="#teachers">Teachers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Sunshine High School has been a beacon of academic excellence and community spirit since 1985. Our mission is to nurture students to become confident, knowledgeable, and responsible global citizens.</p>
+  </section>
+
+  <section id="classes">
+    <h2>Our Classes</h2>
+    <ul>
+      <li>Mathematics - Algebra, Geometry, Calculus</li>
+      <li>Science - Physics, Chemistry, Biology</li>
+      <li>Languages - English, Spanish, French</li>
+      <li>Arts - Painting, Music, Drama</li>
+      <li>Physical Education - Sports, Health</li>
+    </ul>
+  </section>
+
+  <section id="teachers">
+    <h2>Meet Our Teachers</h2>
+    <ul>
+      <li>Mr. Smith - Mathematics</li>
+      <li>Ms. Johnson - Science</li>
+      <li>Mrs. Lee - English</li>
+      <li>Mr. Patel - History</li>
+      <li>Ms. Garcia - Art</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formMessage" style="color: green; display:none; margin-top:10px;">Thank you for contacting us!</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Sunshine High School. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Here you could add code to send form data to a server or email
+      form.style.display = 'none';
+      formMessage.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
