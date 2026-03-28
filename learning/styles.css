@@ -2,7 +2,27 @@
 body{margin:0;background:#cfe9f6;}
 .site{min-height:100vh;width:100%;padding:24px 48px;}
 
-.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  position:fixed;   /* 🔥 important */
+  top:0;
+  left:0;
+  width:100%;
+
+  background:#cfe9f6; /* same as body */
+  padding:10px 40px;
+
+  z-index:1000; /* stay on top */
+}
+.site{
+  padding:100px 48px 24px; /* top padding bigger */
+}
+.header{
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 .left{display:flex;align-items:center;gap:12px;}
 
 .logo{width:72px;height:72px;background:white;border-radius:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
@@ -58,3 +78,36 @@ font-weight:bold;
 @media(max-width:1200px){.products{grid-template-columns:repeat(4,1fr);}}
 @media(max-width:768px){.products{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:500px){.products{grid-template-columns:repeat(2,1fr);}}
+.btn-row{
+  display:flex;
+  gap:6px;
+  margin-top:6px;
+}
+
+.btn-add, .btn-buy{
+  flex:1;
+  padding:6px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.btn-row{
+display:flex;
+gap:5px;
+margin-top:6px;
+}
+
+.btn-add,.btn-buy{
+flex:1;
+padding:6px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.btn-add{background:#eee;}
+.btn-buy{background:#4CAF50;color:white;}
+
+

@@ -1,53 +1,26 @@
-
-
 let cart = [];
 
+function updateCartUI(){
+document.querySelector(".cart-btn").innerText = "Cart (" + cart.length + ")";
+}
+
 function calculateTotal(){
-  let total = 0;
-  cart.forEach(item => total += item.price);
-  return total;
+let total = 0;
+cart.forEach(i => total += i.price);
+return total;
 }
 
 function goCheckout(){
-  if(cart.length === 0){
-    alert("Cart is empty");
-    return;
-  }
-
-  const total = calculateTotal();
-
-  // save total to another page
-  localStorage.setItem("total", total);
-
-  // go to payment page
-  window.location.href = "checkout.html";
-}
-function updateCartUI(){
-  document.querySelector('.cart-btn').innerText = `Cart (${cart.length})`;
+if(cart.length === 0){
+alert("Cart empty");
+return;
 }
 
-function showCart(){
-  if(cart.length === 0){
-    alert("Cart is empty");
-    return;
-  }
-
-
-  let total = 0;
-  let text = "Your Cart:\n\n";
-
-
-  cart.forEach(item=>{
-    text += item.name + " - $" + item.price + "\n";
-    total += item.price;
-  });
-
-
-  text += "\nTotal: $" + total;
-
-
-  alert(text);
+localStorage.setItem("total", calculateTotal());
+window.location.href = "checkout.html";
 }
+
+/* DATA */
 const blockProducts = [
 
 {name:"Flower Block 1", price:8, img:"f1.jpg"},
@@ -85,9 +58,9 @@ const blindProducts = [
 
 ];
 
-/* RENDER FUNCTION */
-
+/* RENDER */
 function render(list,id){
+
 const box=document.getElementById(id);
 box.innerHTML="";
 
@@ -98,19 +71,45 @@ card.className="card";
 
 card.innerHTML=`
 <div class="image"><img src="${p.img}"></div>
-<div class="name">${p.name}</div>
-<div class="price">$${p.price}</div>
+<div>${p.name}</div>
+<div>$${p.price}</div>
+
+<div class="btn-row">
+<button class="btn-add">Add</button>
+<button class="btn-buy" >Buy</button>
+</div>
 `;
 
-card.addEventListener("click",()=>{
+const addBtn=card.querySelector(".btn-add");
+const buyBtn=card.querySelector(".btn-buy");
+
+addBtn.onclick=()=>{
 cart.push(p);
 updateCartUI();
-alert(p.name + " added to cart");
-});
+};
 
+buyBtn.onclick=()=>{
+localStorage.setItem("total",p.price);
+window.location.href="card.html";
+};
+buyBtn.onclick=()=>{
+  // add to cart first
+  cart.push(p);
+  updateCartUI();
+
+  // calculate total
+  const total = calculateTotal();
+
+  // save total
+  localStorage.setItem("total", total);
+
+  // go to payment page
+  window.location.href="card.html";
+};
 box.appendChild(card);
 
 });
+
 }
 
 render(blockProducts,"blockList");
